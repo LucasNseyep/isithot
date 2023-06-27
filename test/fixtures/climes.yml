@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city: MyString
+  country: MyString
+  latitude: 9.99
+  longitude: 9.99
+  temperature: 9.99
+  measured_temperature: 9.99
+
+two:
+  city: MyString
+  country: MyString
+  latitude: 9.99
+  longitude: 9.99
+  temperature: 9.99
+  measured_temperature: 9.99

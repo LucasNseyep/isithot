@@ -1,0 +1,2 @@
+class Clime < ApplicationRecord
+end
