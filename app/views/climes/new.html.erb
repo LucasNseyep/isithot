@@ -1,7 +1,7 @@
 <div data-controller="get-coordinates">
   <%= simple_form_for @clime do |f| %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
+    <%= f.input :latitude, input_html: { data: { get_coordinates_target: "latitude", action: "submit->get-coordinates#fillLatitude" } } %>
+    <%= f.input :longitude, input_html: { data: { get_coordinates_target: "longitude", action: "submit->get-coordinates#fillLongitude" } } %>
     <%= f.button :submit %>
   <% end %>
 </div>

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "climes#new"
   get "climes", to: "climes#index"
+  post "climes", to: "climes#create"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_27_124748) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_01_123155) do
   create_table "climes", force: :cascade do |t|
     t.string "city"
     t.string "country"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_27_124748) do
     t.decimal "measured_temperature"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "street"
   end
 
 end

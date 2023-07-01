@@ -4,13 +4,30 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["latitude", "longitude"]
 
-  connect() {
-    console.log("Hello from get coordinates controller!")
+  getLatitude(position) {
+    return position.coords.latitude
   }
 
-  get(){
-    navigator.geolocation.getCurrentPosition((data) => {
-      console.log(data)
-    })
+  connect() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.latitudeTarget.value = position.coords.latitude
+      this.longitudeTarget.value = position.coords.longitude
+    });
   }
+
+  // getLatitude(position) {
+  //   return position.coords.latitude
+  // }
+
+  // fillLatitude() {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     this.latitudeTarget.value = position.coords.latitude
+  //   });
+  // }
+
+  // fillLongitude() {
+  //   navigator.geolocation.getCurrentPosition((position) => {
+  //     this.longitudeTarget.value = position.coords.longitude
+  //   });
+  // }
 }
