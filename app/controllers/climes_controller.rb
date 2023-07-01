@@ -12,6 +12,8 @@ class ClimesController < ApplicationController
     @clime.country = results.first.country
     @clime.city = results.first.city
     @clime.street = results.first.street
+    response = JSON.parse(get_clime_data(@clime.latitude, @clime.longitude))
+    @clime.temperature = response["main"]["temp"]
     @clime.save
     #use geocoder gem to get geographical information
     #use openweather API to get current temperature
@@ -28,6 +30,7 @@ class ClimesController < ApplicationController
   end
 
   def get_clime_data(latitude, longitude)
-    
+    uri = URI("https://api.openweathermap.org/data/2.5/weather?lat=#{latitude}&lon=#{longitude}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}")
+    Net::HTTP.get(uri)
   end
 end

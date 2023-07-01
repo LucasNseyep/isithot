@@ -1,3 +1,5 @@
+gem "dotenv-rails", groups: [:development, :test]
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -74,5 +76,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "dotenv-rails", groups: [:development, :test]
