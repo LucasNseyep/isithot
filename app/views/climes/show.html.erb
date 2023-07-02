@@ -1,0 +1,4 @@
+<p>Location: </p>
+<h2><%= @clime.street %>, <%= @clime.city %>, <%= @clime.country %></h2>
+<p>Temperature: </p>
+<h1><%= (@clime.temperature - 273.15).round(1) %>°C</h1>

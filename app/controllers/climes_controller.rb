@@ -15,12 +15,12 @@ class ClimesController < ApplicationController
     response = JSON.parse(get_clime_data(@clime.latitude, @clime.longitude))
     @clime.temperature = response["main"]["temp"]
     @clime.save
-    #use geocoder gem to get geographical information
-    #use openweather API to get current temperature
+
+    redirect_to clime_path(@clime)
   end
 
   def show
-
+    @clime = Clime.find(params[:id])
   end
 
   private
