@@ -21,6 +21,7 @@ class ClimesController < ApplicationController
 
   def show
     @clime = Clime.find(params[:id])
+    # raise
   end
 
   private

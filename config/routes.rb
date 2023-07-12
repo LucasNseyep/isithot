@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   root "climes#new"
   get "climes", to: "climes#index"
   post "climes", to: "climes#create"
-  get "climes/:id", to: "climes#show", as: :clime
+  get "climes(/:id)", to: "climes#show", as: :clime
 end
